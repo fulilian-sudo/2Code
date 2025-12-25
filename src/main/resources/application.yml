@@ -1,0 +1,33 @@
+# \u7AEF\u53E3
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+# mybatis
+mybatis:
+  type-aliases-package: cn.yanqi.pojo
+  mapper-locations: classpath:mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true #\u9A7C\u5CF0
+
+
+# \u6570\u636E\u6E90
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/data?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=utf8
+    username: root
+    password: wqw123456
+  thymeleaf:
+    cache: false #\u907F\u514D\u6539\u4E86\u6A21\u677F\u8FD8\u8981\u91CD\u542F\u670D\u52A1\u5668
+    mode: HTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    prefix: classpath:/templates/
+    suffix: .html
+
+  # \u5206\u9875\u63D2\u4EF6
+pagehelper:
+  helper-dialect: mysql
